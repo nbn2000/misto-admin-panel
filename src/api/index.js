@@ -1,7 +1,8 @@
 /* eslint-disable import/no-extraneous-dependencies */
 import { createApi, fetchBaseQuery } from '@reduxjs/toolkit/query/react';
 
-export const BASE_URL = 'http://localhost:8080';
+export const BASE_URL =
+  process.env.NODE_ENV === 'production' ? process.env.VITE_URL : 'http://localhost:8080';
 
 const api = createApi({
   reducerPath: 'api',
